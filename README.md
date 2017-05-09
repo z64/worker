@@ -16,6 +16,12 @@ dependencies:
 
 ```crystal
 require "worker"
+
+# Create a pool of 5 workers that converts Int32s to Strings
+pool = Worker::Pool(Int32, String).new(5) { |input| input.to_s }
+
+# Handle some input
+puts pool.handle(5) #=> {Ok, 5, "5"}
 ```
 
 TODO: Write usage instructions here
