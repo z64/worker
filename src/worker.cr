@@ -1,13 +1,6 @@
 require "./worker/*"
 
 module Worker
-  # Enum representing possible worker states.
-  enum State
-    Ok
-    Stop
-    Error
-  end
-
   class Unit(T, R)
     # The running fiber on this Unit
     @fiber : Fiber?
